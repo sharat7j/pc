@@ -52,7 +52,7 @@ public class PCSearch implements RequestHandler<Request, JSONObject>  {
 		String url="https://search-pcsharat-sdtgdrvrt2qxhosz5j6iht2atu.us-east-1.es.amazonaws.com/plans/_search?q=";
 		if(request.planName!=null){
 			try {
-				url+="PLAN_NAME:\""+URLEncoder.encode("ENCOMPASS HOME HEALTH 401(K) SAVINGS PLAN", "UTF-8")+"\"";
+				url+="PLAN_NAME:\""+URLEncoder.encode(request.planName, "UTF-8")+"\"";
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}						
@@ -60,7 +60,7 @@ public class PCSearch implements RequestHandler<Request, JSONObject>  {
 		
 		if(request.sponsorName!=null){
 			try {
-				url+="SPONSOR_DFE_NAME:\""+URLEncoder.encode("", "UTF-8")+"\"";
+				url+="SPONSOR_DFE_NAME:\""+URLEncoder.encode(request.sponsorName, "UTF-8")+"\"";
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -69,7 +69,7 @@ public class PCSearch implements RequestHandler<Request, JSONObject>  {
 				}
 		if(request.sponsorState!=null){
 			try {
-				url+="SPONS_DFE_MAIL_US_STATE:\""+URLEncoder.encode("", "UTF-8")+"\"";
+				url+="SPONS_DFE_MAIL_US_STATE:\""+URLEncoder.encode(request.sponsorState, "UTF-8")+"\"";
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
